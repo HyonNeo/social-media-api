@@ -16,6 +16,8 @@ connection.once('open', async () => {
     if (studentsCheck.length) {
       await connection.dropCollection('students');
     }
+
+
   // Create empty array to hold the students
   const students = [];
 

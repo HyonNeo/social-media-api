@@ -41,7 +41,7 @@ module.exports = {
       const course = await Course.findOneAndDelete({ _id: req.params.courseId });
 
       if (!course) {
-        return res.status(404).json({ message: 'No course with that ID' });
+        res.status(404).json({ message: 'No course with that ID' });
       }
 
       await Student.deleteMany({ _id: { $in: course.students } });
@@ -60,7 +60,7 @@ module.exports = {
       );
 
       if (!course) {
-        return res.status(404).json({ message: 'No course with this id!' });
+        res.status(404).json({ message: 'No course with this id!' });
       }
 
       res.json(course);
